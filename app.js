@@ -123,7 +123,7 @@ alert(alumnos); */
 const mayusc = [];
 for (let i = 0; i < ej7Nombres.length; i++) {
     
-    let mayus = ej7Nombres[i] + ej7Nombres[i].charAt(0).toUpperCase() + ej7Nombres[i].slice(1);
+    let mayus = i +" " + ej7Nombres[i].charAt(0).toUpperCase() + ej7Nombres[i].slice(1);
        
       mayusc.push(mayus);
    }
