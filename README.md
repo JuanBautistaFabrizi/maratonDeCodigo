@@ -12,24 +12,24 @@
 
 6-Agregar alumnos/as a un curso. Vamos a pedirle al usuario que ingrese nombres de alumnos/as para el nuevo curso. Continuar guardando nombres HASTA que el usuario ingrese SALIR. Mostrar todos los nombres en pantalla.              
 
- Dado el siguiente array de nombres, recorrerlo y mostrar en pantalla: Indice (posición) y Nombre con la primera letra en mayúscula.          
+7-Dado el siguiente array de nombres, recorrerlo y mostrar en pantalla: Indice (posición) y Nombre con la primera letra en mayúscula.          
 
 const ej7Nombres = ["goku","mario","melchor","mafalda","cacho","hermione","tony","pappo","leia",”homero”];          
 
- Para una veterianaria. Dado el siguiente array de nombres de mascotas completar el código con las  siguentes reglas de negocio:      
+8-Para una veterianaria. Dado el siguiente array de nombres de mascotas completar el código con las  siguentes reglas de negocio:      
 - Si el nombre tiene más de 6 caracteres, informar: "Nombre largo"         
 - Si tiene menos o es igual a 3 caracteres, informar: "Nombre corto"          
 - Si es igual a "Fido" o "Gertrudis", informar: "Hay que vacunar contra la rabia"        
 - Si es igual a "Tuerca", informar: "Entregar alimento balanceado"          
 const ej8Mascotas = ["Tuerca","Ramshanaram","Perro","Gertrudis","Kat","Fido","Lo","Loko","MAX"];         
 
- Un restaurant desea mejorar su sistema de reserva para mostrar a los clientes un aproximado de costos.         
+ 9-Un restaurant desea mejorar su sistema de reserva para mostrar a los clientes un aproximado de costos.         
 - Cada menor de edad pagará el menú $450 y cada adulto, $700.       
 - Si el grupo tiene más de 4 adultos, se hará un 10% al total de la factura.      
 Mostrar por pantalla la cantidad de comensales y el costo total a pagar.      
 const ej9restaurant = [25,17,18,44,12,9,36,50]       
 
-De un consultorio médico nos piden automatizar el proceso de recepción de los pacientes.       
+10-De un consultorio médico nos piden automatizar el proceso de recepción de los pacientes.       
   Para ello:           
   - Ingresar código de paciente (Number XXX, 3 dígitos de 1 a 999).          
   - Si el código ingresado esta entre 1 y 99, es un paciente VIP.          
