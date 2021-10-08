@@ -131,10 +131,40 @@ for (let i = 0; i < ej7Nombres.length; i++) {
 console.log(mayusc); */
 
 //8
-/* const ej8Mascotas = ["Tuerca","Ramshanaram","Perro","Gertrudis","Kat","Fido","Lo","Loko","MAX"];
-const newArray = ["Entregar alimento balanceado","Nombre largo","Nombre largo","Hay que vacunar contra la rabia","Nombre corto","Hay que vacunar contra la rabia","Nombre corto","Nombre largo","Nombre corto"];
-let perro = prompt("Ingrese la posición que corresponde de su perro");
-console.log(newArray[perro]); */
+/* let nombre = prompt("Ingrese el nombre de su perro");
+switch (nombre) {
+    case "Tuerca":
+            alert("Entregar alimento balanceado");
+        break;
+    case "Ramshanaram":
+            alert("Nombre largo");
+        break;
+    case "Perro":
+            alert("Nombre largo");
+        break;
+    case "Gertrudis":
+            alert("Hay que vacunar contra la rabia");
+        break;
+    case "Kat":
+            alert("Nombre corto");
+        break;
+    case "Fido":
+            alert("Hay que vacunar contra la rabia");
+        break;
+    case "Lo":
+            alert("Nombre corto");
+        break;
+    case "Loko":
+            alert("Nombre largo");
+        break;
+    case "MAX":
+            alert("Nombre corto");
+        break;
+
+    default:
+        alert("Te equivocaste de veterinaría");
+        break;
+} */
 
 //9
 /* const ej9restaurant = [25,17,18,44,12,9,36,50];
@@ -156,7 +186,7 @@ function restaurante(a,b,c) {
 console.log(restaurante(cantidad,menores,mayores)); */
 
 //10
-const turnos = [];
+const pacientes = [];
 let puntuarServicio = 0;
 const calidadServicio = [];
 let respuesta = true;
@@ -167,24 +197,24 @@ let seguir = true;
 do {
     let codigoPaciente = prompt("Ingrese el código del paciente");
 
-    function pacienteVip(a) {
+    function pacienteNuevo(a) {
         if(a > 0 && a <=99 ){
             alert("Es un paciente VIP");
             puntuarServicio = parseInt(prompt("¿En cuanto valora la calidad del servicio del 1 al 10?"));
             calidadServicio.push(puntuarServicio);
-            turnos.unshift(a);
+            pacientes.unshift(a);
             pacientesVip.push(a);
         }else if(a >= 100 && a <= 500){
             alert("Es un paciente de prepaga");
-            turnos.push(a);
+            pacientes.push(a);
         }else if(a >= 501 && a <=999){
             alert("Es un paciente nuevo");
             respuesta = window.confirm("¿Desea pasarse a VIP?");
             if(respuesta == true){
-                turnos.unshift(a);
+                pacientes.unshift(a);
                 pacientesVip.push(a);
             }else{
-                turnos.push(a);
+                pacientes.push(a);
             }
         }
         else{
@@ -192,7 +222,7 @@ do {
         }
     }
 
-pacienteVip(codigoPaciente);
+pacienteNuevo(codigoPaciente);
 
 
 function puntajeCalidad(a) {
@@ -207,7 +237,7 @@ function puntajeCalidad(a) {
         console.log(Math.min(... a));
 }
 puntajeCalidad(calidadServicio);
-console.log(turnos);
+console.log(pacientes);
 console.log(pacientesVip);
 seguir = window.confirm("¿Desea agregar más pacientes?")
 console.log(seguir);
