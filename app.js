@@ -157,48 +157,62 @@ console.log(restaurante(cantidad,menores,mayores)); */
 
 //10
 const turnos = [];
-let codigoPaciente = prompt("Ingrese el código del paciente");
 let puntuarServicio = 0;
 const calidadServicio = [];
 let respuesta = true;
 const pacientesVip = [];
-function pacienteVip(a) {
-    if(a > 0 && a <=99 ){
-        alert("Es un paciente VIP");
-        puntuarServicio = parent(prompt("¿En cuanto valora la calidad del servicio del 1 al 10?"));
-        calidadServicio.push(puntuarServicio);
-        turnos.unshift(a);
-    }else if(a >= 100 && a <= 500){
-        alert("Es un paciente de prepaga");
-        turnos.push(a);
-    }else if(a >= 501 && a <=999){
-        alert("Es un paciente nuevo");
-        respuesta = window.confirm("¿Desea pasarse a VIP?");
-        if(respuesta == true){
+let suma = 0;
+let seguir = true;
+
+do {
+    let codigoPaciente = prompt("Ingrese el código del paciente");
+
+    function pacienteVip(a) {
+        if(a > 0 && a <=99 ){
+            alert("Es un paciente VIP");
+            puntuarServicio = parseInt(prompt("¿En cuanto valora la calidad del servicio del 1 al 10?"));
+            calidadServicio.push(puntuarServicio);
             turnos.unshift(a);
             pacientesVip.push(a);
-        }else{
+        }else if(a >= 100 && a <= 500){
+            alert("Es un paciente de prepaga");
             turnos.push(a);
+        }else if(a >= 501 && a <=999){
+            alert("Es un paciente nuevo");
+            respuesta = window.confirm("¿Desea pasarse a VIP?");
+            if(respuesta == true){
+                turnos.unshift(a);
+                pacientesVip.push(a);
+            }else{
+                turnos.push(a);
+            }
+        }
+        else{
+            alert("Ingrese un código de paciente Number XXX, 3 dígitos de 1 a 999");
         }
     }
-    else{
-        alert("Ingrese un código de paciente Number XXX, 3 dígitos de 1 a 999");
-    }
-}
 
 pacienteVip(codigoPaciente);
-let calidadServicio = parent(prompt("¿En cuanto valora la calidad del servicio del 1 al 10?"));
-let suma = 0;
-for (let i = 0; i < calidadServicio.length; i++) {
-        suma+= calidadServicio[i];
 
-    }
-let promedio = suma/calidadServicio.length;
-console.log(promedio);
-console.log(Math.max(... calidadServicio));
-console.log(Math.min(... calidadServicio));
-alert(turnos);
-alert(pacientesVip);
+
+function puntajeCalidad(a) {
+    
+    for (let i = 0; i < a.length; i++) {
+            suma+= a[i];
+        }
+
+        let promedio = suma/a.length;
+        console.log(promedio);
+        console.log(Math.max(... a));
+        console.log(Math.min(... a));
+}
+puntajeCalidad(calidadServicio);
+console.log(turnos);
+console.log(pacientesVip);
+seguir = window.confirm("¿Desea agregar más pacientes?")
+console.log(seguir);
+
+} while (seguir == true);
 
   
 
